@@ -9,7 +9,7 @@ const props = defineProps({
     required: true,
   },
 });
-const user = ref(props.user);
+const user = ref({ ...props.user });
 const update = () => {
   emit("update", { ...unref(user) });
 };
@@ -21,7 +21,7 @@ const update = () => {
       <div class="container">
         <div>
           <h2 class="title">Profile</h2>
-          <p class="description">Update your user profile here.</p>
+          <p class="description">Update your current user profile here.</p>
         </div>
 
         <div class="content">
